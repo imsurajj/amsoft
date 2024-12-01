@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Logo from "./ui/logo";
 
 const navigation = [
   { name: "Features", href: "#" },
@@ -20,10 +21,10 @@ export default function Navbar() {
     <header className="fixed inset-x-0 top-0 z-50">
       <nav className="flex items-center justify-between p-4 lg:px-8 max-w-7xl mx-auto" aria-label="Global">
         <div className="flex lg:flex-1">
-          <Link href="/" className="-m-1.5 p-1.5">
-            <div className="w-8 h-8 bg-gradient-to-br from-[#ec4899] to-[#8b5cf6] rounded-lg flex items-center justify-center">
-              <span className="text-lg font-bold text-white">A</span>
-            </div>
+          <Link href="/">
+          <div className="mx-auto w-10 h-10 flex items-center justify-center border border-pink-500/50 rounded-2xl">
+          <Logo className="text-primary" size={32} />
+          </div>
           </Link>
         </div>
         <div className="flex lg:hidden">

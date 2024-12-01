@@ -270,7 +270,7 @@ export default function Hero() {
           </div>
 
           {/* Subtitle */}
-          <div className="flex items-center justify-center gap-2 mb-4">
+          <div className="flex items-center justify-center gap-2 mb-2">
             <p className="text-zinc-500 text-sm font-medium tracking-wider uppercase">
               LAUNCH YOU AFFILIATE PROGRAM
             </p>
@@ -280,7 +280,7 @@ export default function Hero() {
           <motion.div 
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="flex items-center justify-center gap-4 mb-2 text-lg"
+            className="flex items-center justify-center gap-4 mb-1 text-lg"
           >
             <div className="flex items-center gap-3">
               <div className="flex flex-col items-center">
@@ -315,9 +315,9 @@ export default function Hero() {
 
           {/* Main heading */}
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight leading-tight">
-            Join the waitlist for the{' '}
+            Join the waitlist for{' '}
             <span className="bg-gradient-to-r from-[#ec4899] to-[#8b5cf6] text-transparent bg-clip-text whitespace-nowrap">
-              Design System!
+             Monetization System
             </span>
           </h1>
 
