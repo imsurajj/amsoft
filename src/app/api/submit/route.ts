@@ -67,6 +67,11 @@ export async function POST(request: NextRequest) {
 
     console.log('Initializing spreadsheet...');
 
+    // Validate SHEET_ID is defined
+    if (!SHEET_ID) {
+      throw new Error('SHEET_ID environment variable is not set');
+    }
+
     // Initialize the sheet
     const doc = new GoogleSpreadsheet(SHEET_ID, jwt);
     await doc.loadInfo().catch((error) => {
