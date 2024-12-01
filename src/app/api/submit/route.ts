@@ -5,7 +5,7 @@ import { JWT } from 'google-auth-library';
 // Type checking environment variables
 const SHEET_ID = process.env.GOOGLE_SHEET_ID;
 const CLIENT_EMAIL = process.env.GOOGLE_CLIENT_EMAIL;
-const PRIVATE_KEY = process.env.GOOGLE_PRIVATE_KEY ? process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n') : undefined;
+const PRIVATE_KEY = process.env.GOOGLE_PRIVATE_KEY;
 
 if (!SHEET_ID || !CLIENT_EMAIL || !PRIVATE_KEY) {
   console.error('Missing env variables:', {
@@ -58,10 +58,13 @@ export async function POST(request: NextRequest) {
       throw new Error('PRIVATE_KEY environment variable is not set');
     }
 
+    // Format the private key by replacing escaped newlines with actual newlines
+    const formattedPrivateKey = PRIVATE_KEY.replace(/\\n/g, '\n');
+
     // Auth
     const jwt = new JWT({
       email: CLIENT_EMAIL,
-      key: PRIVATE_KEY,
+      key: formattedPrivateKey,
       scopes: ['https://www.googleapis.com/auth/spreadsheets'],
     });
 
