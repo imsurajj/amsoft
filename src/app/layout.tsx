@@ -6,8 +6,13 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "AMS",
-  description: "Asset Management System",
+  title: "Creator Monotization System",
+  description: " A powerful, modern web application built with Next.js that enables creators to monetize their applications through affiliate marketing features.",
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+  },
 };
 
 export default function RootLayout({
