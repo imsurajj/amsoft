@@ -36,7 +36,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="w-full max-w-lg px-6 py-12 mt-16">
+      <div className="w-full max-w-lg px-6 py-10 mt-10">
         <motion.div 
           {...fadeIn}
           className="text-center space-y-8"
@@ -103,12 +103,12 @@ export default function Hero() {
             transition={{ delay: 0.2 }}
             className="mt-6 text-sm text-zinc-500"
           >
-            AMS is coming to Figma soon.<br />
-            Designed by{' '}
+            AMS is Under Development.<br />
+            Building by{' '}
             <a href="#" className="text-zinc-400 hover:text-white transition-colors">
-              @amsoft
+              @suraj
             </a>
-            {' '}to give you back your time.
+            {' '}for all creators.
           </motion.p>
         </motion.div>
       </div>
