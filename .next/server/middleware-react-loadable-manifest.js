@@ -1,1 +1,0 @@
-self.__REACT_LOADABLE_MANIFEST="{\"components\\\\hero.tsx -> react-confetti\":{\"id\":\"components\\\\hero.tsx -> react-confetti\",\"files\":[\"static/chunks/_app-pages-browser_node_modules_react-confetti_dist_react-confetti_min_js.js\"]}}"

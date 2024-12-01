@@ -439,10 +439,11 @@ export default function Hero() {
 
           {/* Hero text that changes */}
           <p className="text-zinc-500">
-            Don&#39;t miss out on the opportunity to be among the first to experience our revolutionary system.
-          </p>
-          <p className="text-zinc-500">
-            We&#39;ll notify you as soon as we&#39;re ready to launch!
+            Be the first to experience the power of our  <span className="bg-gradient-to-r from-[#ec4899] to-[#8b5cf6] text-transparent bg-clip-text whitespace-nowrap">
+              Monotization Platform
+            </span> in your content for  <span className="bg-gradient-to-r from-[#ec4899] to-[#8b5cf6] text-transparent bg-clip-text whitespace-nowrap">
+              FREE
+            </span>.
           </p>
 
           {/* Footer text */}
