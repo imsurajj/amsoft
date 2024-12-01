@@ -3,8 +3,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import logo from "../assets/logo.svg";
-import { Label } from "@/components/ui/label";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, PartyPopper } from "lucide-react";
 import dynamic from 'next/dynamic';
@@ -438,6 +436,14 @@ export default function Hero() {
               </Button>
             </form>
           </motion.div>
+
+          {/* Hero text that changes */}
+          <p className="text-zinc-500">
+            Don&apos;t miss out on the opportunity to be among the first to experience our revolutionary system.
+          </p>
+          <p className="text-zinc-500">
+            We&apos;ll notify you as soon as we&apos;re ready to launch!
+          </p>
 
           {/* Footer text */}
           <motion.p
