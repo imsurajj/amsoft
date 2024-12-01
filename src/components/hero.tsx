@@ -228,10 +228,10 @@ export default function Hero() {
                       Welcome Aboard!
                     </h2>
                     <p className="text-white">
-                      You're now part of our exclusive beta testing group.
+                      You&#39;re now part of our exclusive beta testing group.
                     </p>
                     <p className="text-sm text-white/60">
-                      We'll keep you updated on our progress.
+                      We&#39;ll keep you updated on our progress.
                     </p>
                   </motion.div>
 
@@ -439,10 +439,10 @@ export default function Hero() {
 
           {/* Hero text that changes */}
           <p className="text-zinc-500">
-            Don&apos;t miss out on the opportunity to be among the first to experience our revolutionary system.
+            Don&#39;t miss out on the opportunity to be among the first to experience our revolutionary system.
           </p>
           <p className="text-zinc-500">
-            We&apos;ll notify you as soon as we&apos;re ready to launch!
+            We&#39;ll notify you as soon as we&#39;re ready to launch!
           </p>
 
           {/* Footer text */}
