@@ -172,12 +172,12 @@ export default function Hero() {
             exit={{ opacity: 0 }}
             className="fixed inset-0 flex items-center justify-center z-50 px-4"
           >
-            {/* Subtle Backdrop */}
+            {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="absolute inset-0 backdrop-blur-sm"
+              className="absolute inset-0 bg-black/80 backdrop-blur-md"
               onClick={() => setShowThankYou(false)}
             />
             
@@ -186,73 +186,47 @@ export default function Hero() {
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 10 }}
-              transition={{ type: "spring", duration: 0.5 }}
-              className="relative max-w-sm w-full mx-auto"
+              transition={{ type: "spring", duration: 1 }}
+              className="relative max-w-sm w-full mx-auto bg-black/80 backdrop-blur-xl border border-[#ec4899]/20 rounded-xl shadow-lg overflow-hidden"
             >
-              <div className="relative backdrop-blur-xl rounded-2xl overflow-hidden bg-black">
-                {/* Gradient Border */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#ec4899] to-[#8b5cf6] opacity-20" />
-                
-                {/* Content Container */}
-                <div className="relative p-8">
-                  {/* Success Icon */}
-                  <motion.div
-                    animate={{ 
-                      scale: [1, 1.2, 1],
-                      rotate: [0, -10, 10, -10, 0],
-                    }}
-                    transition={{ 
-                      duration: 0.8,
-                      times: [0, 0.2, 0.5, 0.8, 1],
-                      repeat: 1
-                    }}
-                    className="relative w-20 h-20 mx-auto mb-6"
-                  >
-                    <div className="relative bg-gradient-to-r from-[#ec4899] to-[#8b5cf6] rounded-full p-4 h-full w-full flex items-center justify-center">
-                      <PartyPopper className="w-10 h-10 text-white" />
-                    </div>
-                    
-                    {/* Animated Rings */}
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#ec4899] to-[#8b5cf6] animate-ping opacity-20" />
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#ec4899] to-[#8b5cf6] animate-pulse opacity-10" />
-                  </motion.div>
+              {/* Content Container */}
+              <div className="p-6">
+                {/* Success Icon */}
+                <motion.div
+                  animate={{ 
+                    scale: [1, 1.1, 1],
+                    rotate: [0, -5, 5, -5, 0],
+                  }}
+                  transition={{ 
+                    duration: 0.6,
+                    times: [0, 0.2, 0.5, 0.8, 1],
+                    repeat: 0
+                  }}
+                  className="relative w-16 h-16 mx-auto mb-6"
+                >
+                  <div className="h-full w-full flex items-center justify-center bg-gradient-to-r from-[#ec4899] to-[#8b5cf6] rounded-full">
+                    <PartyPopper className="w-8 h-8 text-white" />
+                  </div>
+                </motion.div>
 
-                  {/* Text Content */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2 }}
-                    className="text-center space-y-2"
-                  >
-                    <h2 className="text-3xl font-bold text-white">
-                      Welcome Aboard!
-                    </h2>
-                    <p className="text-white">
-                      You&#39;re now part of our exclusive beta testing group.
-                    </p>
-                    <p className="text-sm text-white/60">
-                      We&#39;ll keep you updated on our progress.
-                    </p>
-                  </motion.div>
-
-                  {/* Close Button */}
-                  <motion.button
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.5 }}
-                    onClick={() => setShowThankYou(false)}
-                    className="mt-6 text-sm text-white/60 hover:text-white transition-colors flex items-center gap-2 mx-auto"
-                  >
-                    <span className="w-8 h-[1px] bg-gradient-to-r from-[#ec4899] to-transparent" />
-                    Click anywhere to close
-                    <span className="w-8 h-[1px] bg-gradient-to-l from-[#8b5cf6] to-transparent" />
-                  </motion.button>
+                {/* Text Content */}
+                <div className="text-center space-y-2">
+                  <h3 className="text-xl font-semibold text-white">
+                    Thank You!
+                  </h3>
+                  <p className="text-zinc-300">
+                    We've received your details. We'll be in touch soon!
+                  </p>
                 </div>
-              </div>
 
-              {/* Decorative Elements */}
-              <div className="absolute -top-20 -left-20 w-40 h-40 bg-[#ec4899] opacity-20 rounded-full blur-3xl" />
-              <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-[#8b5cf6] opacity-20 rounded-full blur-3xl" />
+                {/* Close Button */}
+                <Button
+                  onClick={() => setShowThankYou(false)}
+                  className="w-full mt-6 bg-gradient-to-r from-[#ec4899] to-[#8b5cf6] text-white hover:opacity-90 transition-opacity"
+                >
+                  Got it 🎉
+                </Button>
+              </div>
             </motion.div>
           </motion.div>
         )}
