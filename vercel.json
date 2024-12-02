@@ -1,7 +1,7 @@
 {
   "git": {
     "deploymentEnabled": {
-      "feature/landing-page-updates": false
+      "landingpage": false
     }
   }
 }
