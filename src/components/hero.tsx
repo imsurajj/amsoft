@@ -215,7 +215,7 @@ export default function Hero() {
                     Thank You!
                   </h3>
                   <p className="text-zinc-300">
-                    We've received your details. We'll be in touch soon!
+                    We&apos;ve received your details. We&apos;ll be in touch soon!
                   </p>
                 </div>
 
