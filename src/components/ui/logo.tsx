@@ -13,8 +13,8 @@ const Logo = ({ className = '', size = 40 }: { className?: string; size?: number
       {/* Gradient definitions */}
       <defs>
         <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" style={{ stopColor: '#ec4899' }} />
-          <stop offset="100%" style={{ stopColor: '#8b5cf6' }} />
+          <stop offset="0%" style={{ stopColor: 'hsl(262.1, 83.3%, 57.8%)' }} />
+          <stop offset="100%" style={{ stopColor: 'hsl(262.1, 83.3%, 47.8%)' }} />
         </linearGradient>
       </defs>
 
