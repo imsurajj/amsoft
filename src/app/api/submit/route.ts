@@ -1,20 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { GoogleSpreadsheet } from 'google-spreadsheet';
 import { JWT } from 'google-auth-library';
+import credentials from './credentials.json';
 
-// Type checking environment variables
-const SHEET_ID = process.env.GOOGLE_SHEET_ID;
-const CLIENT_EMAIL = process.env.GOOGLE_CLIENT_EMAIL;
-const PRIVATE_KEY = process.env.GOOGLE_PRIVATE_KEY;
-
-if (!SHEET_ID || !CLIENT_EMAIL || !PRIVATE_KEY) {
-  console.error('Missing env variables:', {
-    hasSheetId: !!SHEET_ID,
-    hasClientEmail: !!CLIENT_EMAIL,
-    hasPrivateKey: !!PRIVATE_KEY
-  });
-  throw new Error('Missing required environment variables');
+// Validate environment variables
+if (!process.env.GOOGLE_SHEET_ID) {
+  throw new Error('GOOGLE_SHEET_ID is not defined in environment variables');
 }
+const SHEET_ID = process.env.GOOGLE_SHEET_ID;
 
 export async function POST(request: NextRequest) {
   try {
@@ -48,32 +41,16 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    console.log('Creating JWT with:', {
-      email: CLIENT_EMAIL,
-      keyLength: PRIVATE_KEY?.length,
-    });
+    console.log('Creating JWT...');
 
-    // Validate PRIVATE_KEY is defined
-    if (!PRIVATE_KEY) {
-      throw new Error('PRIVATE_KEY environment variable is not set');
-    }
-
-    // Format the private key by replacing escaped newlines with actual newlines
-    const formattedPrivateKey = PRIVATE_KEY.replace(/\\n/g, '\n');
-
-    // Auth
+    // Create JWT using credentials file
     const jwt = new JWT({
-      email: CLIENT_EMAIL,
-      key: formattedPrivateKey,
+      email: credentials.client_email,
+      key: credentials.private_key,
       scopes: ['https://www.googleapis.com/auth/spreadsheets'],
     });
 
     console.log('Initializing spreadsheet...');
-
-    // Validate SHEET_ID is defined
-    if (!SHEET_ID) {
-      throw new Error('SHEET_ID environment variable is not set');
-    }
 
     // Initialize the sheet
     const doc = new GoogleSpreadsheet(SHEET_ID, jwt);
